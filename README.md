@@ -9,7 +9,7 @@ application. You will be asked to:
 
 * Implement an API endpoint to return all the entries in the `WarehouseItems`
   table
-* Implement an API endpoint to create an entry in the `WarehouseItems` table
+* Implement an API endpoint to edit an entry in the `WarehouseItems` table
 
 Use the technologies you have used up to this point. They are all listed in
 the **package.json** for your convenience.
@@ -86,51 +86,6 @@ Success Response:
   ]
   ```
 
-### GET /items/:name
-
-Returns the entry in the `WarehouseItems` table that matches the `name` route
-parameter.
-
-Request:
-
-* Method: `GET`
-* Example URL: `/items/Paint`
-* Headers: none
-* Body: none
-
-Success Response:
-
-* Status Code: `200`
-* Headers:
-  * Content-Type: application/json
-* Example Body:
-
-  ```json
-  {
-    "id": 1,
-    "name": "Paint",
-    "price": 12.12,
-    "quantity": 12,
-    "isUsed": false
-  }
-  ```
-
-Error Response:
-
-When the `name` route parameter could not be matched with any entry in the
-`WarehouseItems` table.
-
-* Status Code: `404`
-* Headers:
-  * Content-Type: application/json
-* Body:
-
-  ```json
-  {
-    "message": "Warehouse Item not found"
-  }
-  ```
-
 ### PUT /items/:id
 
 Update the entry in the `WarehouseItems` table that matches the `id` route
@@ -167,47 +122,6 @@ Success Response:
     "price": 2.50,
     "quantity": 4,
     "isUsed": true
-  }
-  ```
-
-Error Response:
-
-When the `id` route parameter could not be matched with any entry in the
-`WarehouseItems` table.
-
-* Status Code: `404`
-* Headers:
-  * Content-Type: application/json
-* Body:
-
-  ```json
-  {
-    "message": "Warehouse Item not found"
-  }
-  ```
-
-### DELETE /items/:id
-
-Delete the entry in the `WarehouseItems` table that matches the `id` route
-parameter.
-
-Request:
-
-* Method: `DELETE`
-* Example URL: `/items/3`
-* Headers: none
-* Body: none
-
-Success Response:
-
-* Status Code: `200`
-* Headers:
-  * Content-Type: application/json
-* Example Body:
-
-  ```json
-  {
-    "message": "Successfully deleted"
   }
   ```
 
